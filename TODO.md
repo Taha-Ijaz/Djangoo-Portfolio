@@ -1,0 +1,4 @@
+- Fill .env with real database credentials.
+- Run migrations and create superuser.
+- Populate content via Django Admin (Bio, Education, Skills, Experience, Technology, Project).
+- For production: configure static/media serving and set DEBUG=False.
