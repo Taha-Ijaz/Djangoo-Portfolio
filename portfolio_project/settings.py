@@ -30,6 +30,9 @@ INSTALLED_APPS = [
     'skills.apps.SkillsConfig',
     'experience.apps.ExperienceConfig',
     'projects.apps.ProjectsConfig',
+    'certifications.apps.CertificationsConfig',
+    'technical_expertise.apps.TechnicalExpertiseConfig',
+    'technical_achievements.apps.TechnicalAchievementsConfig',
 ]
 
 MIDDLEWARE = [

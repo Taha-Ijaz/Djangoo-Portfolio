@@ -147,7 +147,15 @@
             <div class="card certifications-card">
                 <div class="card-content">
                     <h3 class="card-title">Certifications</h3>
-                    <p class="education-note">Manage certifications via the admin panel (optional app).</p>
+                    {% for cert in certifications %}
+                        <div class="cert-item">
+                            <div class="cert-name">{{ cert.name }}</div>
+                            <div class="cert-org">{{ cert.organization }}</div>
+                        </div>
+                        {% if not forloop.last %}<hr style="opacity:0.06;margin:15px 0;">{% endif %}
+                    {% empty %}
+                        <p class="education-note">No certifications yet. Add them via the admin panel.</p>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -155,7 +163,15 @@
             <div class="card technical-expertise-card">
                 <div class="card-content">
                     <h3 class="card-title">Technical Expertise</h3>
-                    <p class="education-note">Manage technical expertise via the admin panel (use Skills and Experience entries).</p>
+                    {% for expertise in technical_expertise %}
+                        <div class="expertise-item">
+                            <h4 class="expertise-category">{{ expertise.category }}</h4>
+                            <p class="expertise-desc">{{ expertise.description }}</p>
+                        </div>
+                        {% if not forloop.last %}<hr style="opacity:0.06;margin:15px 0;">{% endif %}
+                    {% empty %}
+                        <p class="education-note">No technical expertise entries yet. Add them via the admin panel.</p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -192,7 +208,18 @@
             <div class="card achievements-card">
                 <div class="card-content">
                     <h3 class="card-title">Technical Achievements</h3>
-                    <p class="education-note">Manage achievements via the admin panel (optional model).</p>
+                    {% for achievement in technical_achievements %}
+                        <div class="achievement-item">
+                            <i class="{{ achievement.icon }} achievement-icon"></i>
+                            <div class="achievement-text">
+                                <strong>{{ achievement.title }}</strong>
+                                <span>{{ achievement.description }}</span>
+                            </div>
+                        </div>
+                        {% if not forloop.last %}<hr style="opacity:0.06;margin:15px 0;">{% endif %}
+                    {% empty %}
+                        <p class="education-note">No technical achievements yet. Add them via the admin panel.</p>
+                    {% endfor %}
                 </div>
             </div>
 
